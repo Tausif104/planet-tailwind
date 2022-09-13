@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Planet</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
@@ -13,11 +13,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <!-- header -->
-    <header class="mt-5 mb-10" id="navbar">
+    <header class="mt-5 hidden" id="navbar">
       <div class="container mx-auto flex items-center justify-between">
         <a href="index.html">
           <img src="assets/images/logo.svg" alt="" />
@@ -29,30 +30,30 @@
           <li><a href="#">Contact</a></li>
           <li><a href="#">FAQ</a></li>
         </ul>
-        <a href="#" class="bg-blue-500 text-white py-3 px-10 rounded text-sm font-sans inline-block">Register</a>
+        <a href="#" class="bg-blue-500 text-white py-3 px-10 rounded text-sm font-sans inline-block hover:bg-black transition">Register</a>
       </div>
     </header>
     <!-- header -->
 
     <!-- hero area -->
-    <section id="hero">
+    <section id="hero " class="mt-[50px]">
       <div class="container mx-auto bg-slate-300 rounded-3xl">
-        <div class="grid grid-cols-2 px-24 pb-0 items-center">
-          <div class="hero-text">
-            <h1 class="text-7xl font-bold leading-tight mb-4">
-              Discover the <br />
-              best destinations <br />
+        <div class="grid 2xl:grid-cols-2 xl:grid-cols-2 grid-cols-1 lg:px-24 px-10 pb-0 items-center relative">
+          <div class="hero-text py-[70px]" data-aos="fade-right">
+            <h1 class="2xl:text-7xl md:text-[50px] text-[30px] font-bold leading-tight mb-4">
+              Discover the <br class="xl:block hidden" />
+              best destinations <br class="xl:block hidden" />
               in the world
             </h1>
-            <p class="text-sm leading-8 mb-10">
+            <p class="text-sm leading-[1.8] mb-10">
               Let's take a vacation to get rid of the boredom and make <br />
               your day more colorful Bright air awaits you for a vacation <br />
               with your friends, lover or family.
             </p>
-            <a href="#" class="bg-blue-500 text-white py-5 px-10 rounded text-sm font-sans inline-block">Get Started</a>
+            <a href="#" class="bg-blue-500 text-white py-5 px-10 rounded text-sm font-sans inline-block hover:bg-black transition">Get Started <i class="fas fa-angles-right ml-3"></i></a>
           </div>
-          <div class="hero-image">
-            <img class="text-right" src="assets/images/suitcase.png" alt="" />
+          <div class="hero-image 2xl:absolute xl:absolute bottom-0 right-0" data-aos="fade-left" data-aos-delay="200">
+            <img class="text-right 2xl:w-full xl:w-[600px]" src="assets/images/suitcase.png" alt="" />
           </div>
         </div>
       </div>
@@ -61,22 +62,41 @@
 
     <!-- brand area -->
     <section id="brands" class="mt-20">
-      <div class="container mx-auto px-32">
-        <div class="grid grid-cols-5">
-          <div class="brand text-center">
-            <img class="mx-auto" src="assets/images/brands/netflix.png" alt="" />
-          </div>
-          <div class="brand text-center">
-            <img class="mx-auto" src="assets/images/brands/paypal.png" alt="" />
-          </div>
-          <div class="brand text-center">
-            <img class="mx-auto" src="assets/images/brands/amazon.png" alt="" />
-          </div>
-          <div class="brand text-center">
-            <img class="mx-auto" src="assets/images/brands/samsclub.png" alt="" />
-          </div>
-          <div class="brand text-center">
-            <img class="mx-auto" src="assets/images/brands/firstdata.png" alt="" />
+      <div class="container mx-auto 2xl:px-32">
+        <div class="brand-slider-wrapper overflow-hidden">
+          <div class="brand-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="brand text-center">
+                  <img class="mx-auto" src="assets/images/brands/netflix.png" alt="netflix.png" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand text-center">
+                  <img class="mx-auto" src="assets/images/brands/amazon.png" alt="netflix.png" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand text-center">
+                  <img class="mx-auto" src="assets/images/brands/firstdata.png" alt="netflix.png" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand text-center">
+                  <img class="mx-auto" src="assets/images/brands/paypal.png" alt="netflix.png" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand text-center">
+                  <img class="mx-auto" src="assets/images/brands/samsclub.png" alt="netflix.png" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="brand text-center">
+                  <img class="mx-auto" src="assets/images/brands/netflix.png" alt="netflix.png" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -84,48 +104,48 @@
     <!-- brand area -->
 
     <!-- destination -->
-    <section id="destination" class="py-32">
+    <section id="destination" class="py-32 md:px-0 px-5">
       <div class="container mx-auto mb-20">
-        <h2 class="text-center text-6xl font-bold">Our Popular Destination</h2>
+        <h2 class="text-center xl:text-6xl md:text-[40px] text-[30px] font-bold" data-aos="fade-up">Our Popular Destination</h2>
       </div>
-      <div class="container mx-auto px-32">
-        <div class="grid grid-cols-3 gap-20">
-          <div class="group destination bg-white shadow-xl rounded-[25px] pb-5">
-            <div class="image-wrapper relative">
-              <img class="w-full" src="assets/images/destination/1.png" alt="" />
+      <div class="container mx-auto 2xl:px-32">
+        <div class="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 2xl:gap-20 xl:gap-10 gap-8">
+          <div class="group destination bg-white shadow-xl rounded-[25px] pb-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="image-wrapper relative overflow-hidden rounded-md">
+              <img class="w-full group-hover:scale-105 transition" src="assets/images/destination/1.png" alt="" />
               <span class="location absolute top-5 right-5 text-white group-hover:text-orange-500"><i class="fas fa-map-marker-alt"></i> Canada</span>
             </div>
             <div class="destination-text p-7">
               <h4 class="flex justify-between mb-3">
-                <span class="text-2xl"><strong>Canada</strong></span> <span class="text-orange-500"><i class="fas fa-star text-xs mr-1"></i> 5.0</span>
+                <span class="text-2xl"><strong>Canada</strong></span> <span class="text-orange-500 transition"><i class="fas fa-star text-xs mr-1"></i> 5.0</span>
               </h4>
               <p class="text-gray-500 mb-3">We provide some very affordable prices compared to others.</p>
               <div class="destination-meta flex justify-between items-center">
                 <div class="price text-2xl font-bold">$ 499.50</div>
-                <a href="#" class="bg-blue-500 text-white py-2 px-5 rounded-md text-xs font-sans inline-block">Start Trip</a>
+                <a href="#" class="bg-blue-500 text-white py-2 px-5 rounded-md text-xs font-sans inline-block transition hover:bg-black">Start Trip</a>
               </div>
             </div>
           </div>
-          <div class="group destination bg-white shadow-xl rounded-[25px] pb-5">
-            <div class="image-wrapper relative">
-              <img class="w-full" src="assets/images/destination/2.png" alt="" />
+          <div class="group destination bg-white shadow-xl rounded-[25px] pb-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="image-wrapper relative overflow-hidden rounded-md">
+              <img class="w-full group-hover:scale-105 transition" src="assets/images/destination/2.png" alt="" />
               <span class="location absolute top-5 right-5 text-white group-hover:text-orange-500"><i class="fas fa-map-marker-alt"></i> London</span>
             </div>
             <div class="destination-text p-7">
               <h4 class="flex justify-between mb-3">
-                <span class="text-2xl"><strong>Canada</strong></span> <span class="text-orange-500"><i class="fas fa-star text-xs mr-1"></i> 5.0</span>
+                <span class="text-2xl"><strong>Canada</strong></span> <span class="text-orange-500 transition"><i class="fas fa-star text-xs mr-1"></i> 5.0</span>
               </h4>
               <p class="text-gray-500 mb-3">We provide some very affordable prices compared to others.</p>
               <div class="destination-meta flex justify-between items-center">
                 <div class="price text-2xl font-bold">$ 499.50</div>
-                <a href="#" class="bg-blue-500 text-white py-2 px-5 rounded-md text-xs font-sans inline-block">Start Trip</a>
+                <a href="#" class="bg-blue-500 text-white py-2 px-5 rounded-md text-xs font-sans inline-block transition hover:bg-black">Start Trip</a>
               </div>
             </div>
           </div>
-          <div class="group destination bg-white shadow-xl rounded-[25px] pb-5">
-            <div class="image-wrapper relative">
-              <img class="w-full" src="assets/images/destination/3.png" alt="" />
-              <span class="location absolute top-5 right-5 text-white group-hover:text-orange-500"><i class="fas fa-map-marker-alt"></i> Brazil</span>
+          <div class="group destination bg-white shadow-xl rounded-[25px] pb-5" data-aos="fade-up" data-aos-delay="300">
+            <div class="image-wrapper relative overflow-hidden rounded-md">
+              <img class="w-full group-hover:scale-105 transition" src="assets/images/destination/3.png" alt="" />
+              <span class="location absolute top-5 right-5 text-white group-hover:text-orange-500 transition"><i class="fas fa-map-marker-alt"></i> Brazil</span>
             </div>
             <div class="destination-text p-7">
               <h4 class="flex justify-between mb-3">
@@ -134,7 +154,7 @@
               <p class="text-gray-500 mb-3">We provide some very affordable prices compared to others.</p>
               <div class="destination-meta flex justify-between items-center">
                 <div class="price text-2xl font-bold">$ 499.50</div>
-                <a href="#" class="bg-blue-500 text-white py-2 px-5 rounded-md text-xs font-sans inline-block">Start Trip</a>
+                <a href="#" class="bg-blue-500 text-white py-2 px-5 rounded-md text-xs font-sans inline-block transition hover:bg-black">Start Trip</a>
               </div>
             </div>
           </div>
@@ -144,12 +164,12 @@
     <!-- destination -->
 
     <!-- featured section -->
-    <section id="featured">
-      <div class="container px-32 mx-auto">
-        <div class="grid grid-cols-2 items-center">
-          <div class="featured-image relative">
-            <img src="assets/images/featured-1.png" alt="featured-image-one" />
-            <div class="absolute bottom-0 right-14 bg-white w-[245px] p-6 shadow-xl rounded-xl">
+    <section id="featured" class="md:px-0 px-5">
+      <div class="container 2xl:px-32 mx-auto">
+        <div class="grid xl:grid-cols-2 grid-cols-1 items-center">
+          <div class="featured-image relative xl:w-full lg:w-[650px] w-full xl:mb-0 mb-10">
+            <img class="w-full" src="assets/images/featured-1.png" alt="featured-image-one" data-aos="fade-right" />
+            <div class="absolute bottom-0 right-14 bg-white w-[245px] p-6 shadow-xl rounded-xl" data-aos="fade-up" data-aos-delay="250">
               <h4 class="text-[25px] font-bold">London</h4>
               <p class="text-[12px] font-semibold mb-3 mt-1">London tower bridge sunset on thames river</p>
               <div class="flex items-center justify-between">
@@ -158,8 +178,8 @@
               </div>
             </div>
           </div>
-          <div class="featured-text">
-            <h3 class="font-bold text-6xl mb-0">Travel any corner of the Wide</h3>
+          <div class="featured-text xl:ml-16 lg:ml-0 md:ml-0" data-aos="fade-left">
+            <h3 class="font-bold xl:text-6xl md:text-[40px] text-[30px] mb-0">Travel any corner of the Wide</h3>
             <p class="text-[20px] mt-6 mb-10 leading-8">
               Let's take a vacation to get rid of the boredom and make your day more colorful Bright air awaits you for a vacation with your friends, lover or family.
             </p>
@@ -171,12 +191,12 @@
     <!-- featured section -->
 
     <!-- featured section -->
-    <section id="featured" class="mt-32">
-      <div class="container px-32 mx-auto">
-        <div class="grid grid-cols-2 items-center">
-          <div class="featured-text">
-            <h3 class="font-bold text-6xl mb-0">
-              Get Experience <br />
+    <section id="featured" class="mt-32 md:px-0 px-5">
+      <div class="container 2xl:px-32 mx-auto">
+        <div class="grid xl:grid-cols-2 grid-cols-1 items-center">
+          <div class="featured-text xl:mr-0 lg:mr-16 xl:order-first order-last" data-aos="fade-right">
+            <h3 class="font-bold xl:text-6xl md:text-[40px] text-[30px] mb-0">
+              Get Experience <br class="xl:block hidden" />
               Which are fun
             </h3>
             <p class="text-[20px] mt-6 mb-10 leading-8">
@@ -184,9 +204,9 @@
             </p>
             <a href="#" class="bg-blue-500 text-white py-5 px-10 rounded text-sm font-sans inline-block">Explore Our Story <i class="ml-3 text-[15px] fa-solid fa-angles-right"></i></a>
           </div>
-          <div class="featured-image relative">
-            <img class="mr-0 ml-auto" src="assets/images/featured-2.png" alt="featured-image-two" />
-            <div class="absolute bg-white flex items-center shadow-xl rounded-lg bottom-10 p-5 w-[370px] right-0">
+          <div class="featured-image relative xl:w-full lg:w-[650px] w-full xl:mb-0 mb-10">
+            <img class="xl:mr-0 xl:ml-auto" data-aos="fade-left" src="assets/images/featured-2.png" alt="featured-image-two" />
+            <div data-aos="fade-up" data-aos-delay="250" class="absolute bg-white flex items-center shadow-xl rounded-lg bottom-10 p-5 md:w-[370px] w-full right-0">
               <img src="assets/images/affordable-price.png" alt="" />
               <div class="ml-5">
                 <h3 class="text-[16px] font-bold mb-2">Affordable prices</h3>
@@ -200,14 +220,14 @@
     <!-- featured section -->
 
     <!-- call to action -->
-    <div id="cta" class="mb-32 mt-[250px] bg-slate-300">
-      <div class="container mx-auto px-32">
-        <div class="grid grid-cols-2 items-center">
-          <div class="cta-image">
-            <img class="-mt-[100px]" src="assets/images/cta-girl.png" alt="cta-image.png" />
+    <div id="cta" class="mb-32 xl:mt-[250px] mt-32 bg-slate-300">
+      <div class="container mx-auto 2xl:px-32 px-5">
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
+          <div class="cta-image lg:order-first order-last md:mt-0 mt-10" data-aos="fade-right" data-aos-delay="150">
+            <img class="xl:-mt-[100px]" src="assets/images/cta-girl.png" alt="cta-image.png" />
           </div>
-          <div class="cta-content">
-            <h2 class="text-[55px] font-bold leading-[1.2]">Take the best weekend and enjoy your place</h2>
+          <div class="cta-content lg:pt-0 pt-20" data-aos="fade-left">
+            <h2 class="xl:text-[55px] md:text-[40px] text-[30px] font-bold leading-[1.2]">Take the best weekend and enjoy your place</h2>
             <p class="text-[20px] my-10">Let's take a vacation to get rid of the boredom and make your day more colorful Bright air awaits you for a vacation with your friends, lover or family.</p>
             <a href="#" class="bg-blue-500 text-white py-5 px-10 rounded text-sm font-sans inline-block">Contact Us <i class="ml-3 text-[15px] fa-solid fa-angles-right"></i></a>
           </div>
@@ -216,15 +236,15 @@
     </div>
     <!-- call to action -->
 
-    <section id="testimonial">
-      <div class="container mx-auto px-32">
-        <div class="grid grid-cols-2 items-center">
-          <div class="testimonial-slider">
+    <section id="testimonial" data-aos="fade-up">
+      <div class="container mx-auto 2xl:px-32">
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
+          <div class="testimonial-slider md:px-0 px-5">
             <div class="swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="testimonial-slide">
-                    <h2 class="text-[55px] font-bold leading-[1.2]">What our customer say about us</h2>
+                    <h2 class="xl:text-[55px] md:text-[40px] text-[30px] font-bold leading-[1.2]">What our customer say about us</h2>
                     <p class="text-[20px] my-7">
                       Let's take a vacation to get rid of the boredom and make your day more colorful Bright air awaits you for a vacation with your friends, lover or family.
                     </p>
@@ -242,7 +262,7 @@
                 </div>
                 <div class="swiper-slide">
                   <div class="testimonial-slide">
-                    <h2 class="text-[55px] font-bold leading-[1.2]">What our customer say about us</h2>
+                    <h2 class="xl:text-[55px] text-[40px] font-bold leading-[1.2]">What our customer say about us</h2>
                     <p class="text-[20px] my-7">
                       Let's take a vacation to get rid of the boredom and make your day more colorful Bright air awaits you for a vacation with your friends, lover or family.
                     </p>
@@ -270,30 +290,30 @@
               </span>
             </div>
           </div>
-          <div class="testimonial-image">
+          <div class="testimonial-image xl:ml-0 md:ml-10 ml-0 md:mt-0 mt-20">
             <img class="ml-auto mr-0" src="assets/images/testimonial-image.png" alt="testimonial-image" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="get_started" class="mt-32">
-      <div class="container mx-auto px-32">
+    <section id="get_started" class="mt-32" data-aos="fade-up">
+      <div class="container mx-auto 2xl:px-32">
         <div class="bg-blue-400 text-center rounded-xl py-[50px]">
-          <h2 class="text-white text-[55px] leading-[1.2] font-bold">
-            Prepare yourself & let’s explore <br />
+          <h2 class="text-white xl:text-[55px] md:text-[40px] text-[30px] leading-[1.2] font-bold">
+            Prepare yourself & let’s explore <br class="md:block hidden" />
             The beauty of the world
           </h2>
-          <p class="text-white text-[28px] my-5">We have many special offers especially for you.</p>
+          <p class="text-white md:text-[28px] text-[20px] my-5">We have many special offers especially for you.</p>
           <a href="#" class="bg-white text-black py-5 px-10 rounded text-sm font-sans inline-block">Contact Us <i class="ml-3 text-[15px] fa-solid fa-angles-right"></i></a>
         </div>
       </div>
     </section>
 
-    <footer class="mt-32">
-      <div class="container mx-auto px-32">
-        <div class="grid grid-cols-6">
-          <div class="footer-box col-span-2">
+    <footer class="mt-32 md:mx-0 mx-5" data-aos="fade-up">
+      <div class="container mx-auto 2xl:px-32">
+        <div class="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-1 lg:gap-0 gap-10">
+          <div class="footer-box lg:col-span-2">
             <img class="mb-5" src="assets/images/logo-footer.png" alt="logo-footer.png" />
             <p class="font-bold text-[20px] leading-[1.8]">
               We always make our customer <br />
@@ -350,7 +370,7 @@
           </div>
         </div>
       </div>
-      <div class="container mx-auto text-center px-32 mt-[50px]">
+      <div class="container mx-auto text-center lg:px-32 mt-[50px]">
         <div class="border-t py-5">
           <p class="text-[18px] text-gray-500">Copyright-2022 &copy; planet.All rights researved</p>
         </div>
@@ -358,6 +378,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
 </html>
