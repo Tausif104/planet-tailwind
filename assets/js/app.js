@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     speed: 400,
     loop: true,
+    autoplay: {
+      delay: 5000,
+    },
     navigation: {
       nextEl: '.testimonial-next',
       prevEl: '.testimonial-prev',
@@ -15,8 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // swiper slider: testimonial
   const brandSlider = new Swiper('.brand-slider', {
     slidesPerView: 5,
-    speed: 400,
     loop: true,
+    autoplay: {
+      delay: 200,
+    },
     breakpoints: {
       200: {
         slidesPerView: 1,
@@ -46,5 +51,23 @@ document.addEventListener('DOMContentLoaded', () => {
     throttleDelay: 400,
     once: true,
     disable: 'mobile',
+  })
+
+  // header menu
+  const menuTrigger = document.getElementById('menu-trigger')
+  const menuClose = document.getElementById('menu-close')
+  const offCanvas = document.getElementById('offcanvas-menu')
+  const menuClass = 'menu-active'
+
+  menuClose.addEventListener('click', () => {
+    if (offCanvas.classList.contains(menuClass)) {
+      offCanvas.classList.remove(menuClass)
+    }
+  })
+
+  menuTrigger.addEventListener('click', () => {
+    if (!offCanvas.classList.contains(menuClass)) {
+      offCanvas.classList.add(menuClass)
+    }
   })
 })
