@@ -45,5 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     duration: 700,
     throttleDelay: 400,
     once: true,
+    disable: 'mobile',
   })
 })
